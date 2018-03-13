@@ -24,6 +24,7 @@ public class SubscribersRepository {
         return Optional.ofNullable(subscribers.get(email));
     }
 
+    @Metered(name = "Subscriber added")
     public void addSubscriber(Subscriber subscriber) {
         subscribers.put(subscriber.getEmail(), subscriber);
     }
